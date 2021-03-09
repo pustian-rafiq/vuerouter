@@ -1,0 +1,24 @@
+.container{
+	width: 70%;
+	margin: auto;
+	 
+}
+.main-menu{
+  background: black;
+
+}
+.main-menu ul{
+	list-style: none;
+}
+.main-menu ul li{
+	display: inline-block;
+	padding: 10px;
+}
+.main-menu ul li a{
+	text-decoration: none;
+	color: white;
+}
+.router-link-active{
+	background: red;
+	padding: 10px;
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Page url changes without loading</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    
+            <div class="container">
+              <div class="content">
+
+                 <nav class="main-menu">
+                  <ul>
+                    <li><a href="home">Home</a></li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="contact">Contact</a></li>
+                    <li><a href="blog">Blog</a></li>
+                  </ul>
+                  
+                </nav>
+
+
+                <nav class="main-menu">
+                  <ul>
+                    <li><router-link to="home">Home</router-link></li>
+                    <li><router-link to="about">About</router-link></li>
+                    <li><router-link to="contact">Contact</router-link></li>
+                    <li><router-link to="blog">Blog</router-link></li>
+                  </ul>
+                  
+                </nav>
+
+                <router-view></router-view>
+                
+              </div>
+              
+            </div>
+
+     
+        
+         
+      <script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+      <script>
+
+        const Home ={
+         
+          template:`
+            <div class="body-content">
+                  <h3>Home</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
+                  
+                </div>
+          `
+ 
+        };
+        const About ={
+         
+          template:`
+            <div class="body-content">
+                  <h3>About</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
+                  
+                </div>
+          `
+ 
+        };
+        const Contact ={
+         
+          template:`
+            <div class="body-content">
+                  <h3>Contact</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
+                  
+                </div>
+          `
+ 
+        };
+        const Blog ={
+         
+          template:`
+            <div class="body-content">
+                  <h3>Blog</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
+                  
+                </div>
+          `
+ 
+        };
+
+
+        const routes =  [
+        {
+          path:'/home',
+          component: Home
+        },
+        {
+          path:'/about',
+          component: About
+        },
+        {
+          path:'/contact',
+          component: Contact
+        },
+        {
+          path:'/blog',
+          component: Blog
+        }
+        ];
+
+        const router = new VueRouter({
+          routes,
+          mode: 'history',
+          base: 'vuerouter'
+        });
+
+        const app = new Vue({
+            router
+          }).$mount('.content')
+      </script>
+    </body>
+</html>
